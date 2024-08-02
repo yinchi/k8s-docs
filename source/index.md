@@ -9,7 +9,7 @@ The instructions assume a **Ubuntu** host machine; however, except for the insta
 :hidden:
 :numbered:
 :caption: Getting started
+:glob:
 
-getting-started/01-installation
-getting-started/02-dashboard
+getting-started/*
 :::
