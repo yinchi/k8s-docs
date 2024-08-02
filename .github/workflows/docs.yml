@@ -32,6 +32,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Sphinx Build
         uses: yinchi/sphinx-action@master
+        with:
+          docs-folder: "/"
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
