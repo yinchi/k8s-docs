@@ -1,0 +1,15 @@
+{
+    "pylint.importStrategy": "fromEnvironment",
+    "isort.args": [
+        "-l 100"
+    ],
+    "autopep8.args": [
+        "--max-line-length=100"
+    ],
+    "pylint.args": [
+        "--rcfile `git root`/.pylintrc"
+    ],
+    "[markdown]": {
+        "editor.wordWrap": "bounded",
+    }
+}
