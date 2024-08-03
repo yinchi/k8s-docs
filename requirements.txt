@@ -1,0 +1,4 @@
+myst_parser
+sphinxcontrib.kroki
+sphinx_copybutton
+sphinx_rtd_dark_mode
