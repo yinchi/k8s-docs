@@ -88,3 +88,11 @@ $ minikube start
 🌟  Enabled addons: storage-provisioner, default-storageclass
 🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
 :::
+
+### Multiple nodes
+
+Note that we could start multiple nodes on the same host. Such a setup could be used for testing networking setups locally before deploying to multiple physical nodes. For an example, see <https://pet2cattle.com/2021/01/multinode-minikube>.
+
+```bash
+minikube start -n 2 -p multinode-demo
+```

@@ -8,7 +8,7 @@ The instructions assume a **Ubuntu** host machine; however, except for the insta
 :::{toctree}
 :hidden:
 :numbered:
-:caption: Getting started
+:caption: Intro to K8s
 :glob:
 
 getting-started/*

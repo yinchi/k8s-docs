@@ -3,6 +3,11 @@ Deployments
 
 Deployments use **replica sets** of one or more pods to host an application. They also support versioning via rollouts and rollbacks.
 
+:::{figure} /_static/images/k8s-deployment.png
+
+Image source: <http://wiki.ciscolinux.co.uk/index.php/Kubernetes/Deployment,_ReplicaSet_and_Pod>
+:::
+
 ## Example: Multi-pod Nginx deployment
 
 ```bash
