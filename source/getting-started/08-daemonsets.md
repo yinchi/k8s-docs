@@ -98,6 +98,10 @@ spec:
 :caption: Right click > "Open image in new tab" to view full-size.
 
 @startyaml
+#highlight metadata/labels/k8s-app
+#highlight spec/selector/matchLabels/k8s-app
+#highlight spec/template/metadata/labels/k8s-app
+
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:

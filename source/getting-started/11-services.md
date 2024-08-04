@@ -99,6 +99,54 @@ spec:
     nodePort: 31080
 :::
 
+```{kroki}
+:type: plantuml
+:caption: Right click > "Open image in new tab" to view full-size.
+
+@startyaml
+#highlight metadata/labels/run
+
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: pod-hello
+  name: pod-hello
+spec:
+  containers:
+    - image: pbitty/hello-from
+      name: pod-hello
+      ports:
+        - containerPort: 80
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+@endyaml
+```
+
+```{kroki}
+:type: plantuml
+
+@startyaml
+#highlight spec/selector/run
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: pod-hello
+spec:
+  selector:
+    run: pod-hello
+  type: NodePort
+  ports:
+  - name: http
+    protocol: TCP
+    port: 8000
+    targetPort: 80
+    nodePort: 31080
+@endyaml
+```
+
 Note that the selector for the service matches the label for the pod.
 
 ```console

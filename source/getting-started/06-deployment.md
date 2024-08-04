@@ -52,6 +52,10 @@ status: {}
 :caption: Right click > "Open image in new tab" to view full-size.
 
 @startyaml
+#highlight metadata/labels/app
+#highlight spec/selector/matchLabels/app
+#highlight spec/template/metadata/labels/app
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
