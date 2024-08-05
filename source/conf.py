@@ -22,6 +22,7 @@ extensions = [
 
 myst_enable_extensions = [
     "attrs_inline",
+    "attrs_block",
     "colon_fence",
     "smartquotes",
     "strikethrough",

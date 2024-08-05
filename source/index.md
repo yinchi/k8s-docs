@@ -13,3 +13,12 @@ The instructions assume a **Ubuntu** host machine; however, except for the insta
 
 getting-started/*
 :::
+
+:::{toctree}
+:hidden:
+:numbered:
+:caption: Intro to Helm
+:glob:
+
+helm/*
+:::
