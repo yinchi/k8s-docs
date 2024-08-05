@@ -4,12 +4,12 @@ Volumes
 Volume types are described at <https://kubernetes.io/docs/concepts/storage/volumes/>
 
 - An ephemeral volume is linked to a pod and has the same lifespan as the pod, but is preserved across container restarts. One example of this is the `empty` volume type.
-- The `hostMap` volume type shares a directory between the host and the pod, similar to a bind mount in Docker.
+- The `hostPath` volume type shares a directory between the host and the pod, similar to a bind mount in Docker.
 - A config map is a section of a YAML file that is mounted into the pod.
 
 Note that many of the volume types listed in the link above are deprecated in favor of the Container Storage Interface (CSI).
 
-## Example
+## HostPath Example
 
 First, since Minikube is running in a Docker container, we need to mount our own filesystem into the Docker container:
 
@@ -68,6 +68,26 @@ spec:
           name: vol
 ```
 
+```{kroki}
+:type: plantuml
+
+@startuml
+rectangle "Host machine" {
+  folder "$HOME/k8s-docs/build/html" as home
+  rectangle "Minikube Docker container" {
+    folder "/hosthome/k8s-docs/build/html" as hosthome
+    rectangle Node {
+      rectangle Pod {
+        folder "/usr/share/nginx/html" as pod
+      }
+    }
+  }
+}
+home <--> hosthome : "  (minikube mount)"
+hosthome <--> pod
+@enduml
+```
+
 Finally, in a new terminal, apply the deployment, expose it as a service, and forward the appropiate port:
 
 ```console
@@ -81,3 +101,12 @@ Forwarding from [::]:8000 -> 80
 ```
 
 ![](/_static/images/volumeMounts.png)
+
+To verify that changes in the host filesystem are reflected in the pod, we can delete our files:
+
+```console
+(.venv)$ make clean
+Removing everything under 'build'...
+```
+
+Reloading the site now should result in an error.
