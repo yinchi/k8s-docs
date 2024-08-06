@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "app.fullName" . }}
+  labels: {{ include "app.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.app.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "app.fullName" . }}
+  template:
+    metadata:
+      labels: {{ include "app.labels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: {{ include "app.fullName" . }}
+          {{- with .Values.app.container }}
+          image: {{ .image }}  
+          ports:
+            - containerPort: {{ .port }}
+          {{- end }}
+          {{- if .Values.app.container.env }}
+          env:
+            {{- range $key, $val := .Values.app.container.env}}
+            - name: {{ $key }}
+              value: {{ $val | quote }}
+            {{- end}}
+          {{- else }}
+          env: []
+          {{- end }}

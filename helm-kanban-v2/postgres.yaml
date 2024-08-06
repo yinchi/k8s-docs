@@ -1,0 +1,7 @@
+fullnameOverride: "postgres"
+
+auth:
+  postgresPassword: "postgres"
+  username: "kanban"
+  password: "kanban"
+  database: "kanban"

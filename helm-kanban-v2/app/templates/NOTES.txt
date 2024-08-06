@@ -1,0 +1,31 @@
+### 
+######
+
+{{ .Release.Name }}, version: {{ .Release.Revision }} has been installed, based on "app" Helm Chart!
+
+Here is a short summary of installed application:
+
+Docker base image: {{ .Values.app.container.image }}
+Instances count: {{ .Values.app.replicaCount }}
+
+
+######
+
+Useful commands:
+
+To list all Kubernetes resources created in this {{ .Release.Name }} Release:
+
+    > kubectl get all --namespace {{ .Release.Namespace }} -l app.kubernetes.io/version={{ .Release.Name }}-{{ .Release.Revision }}
+
+{{- if contains "ClusterIP" .Values.app.service.type }}
+
+To establish connection with your app:
+
+    > kubectl port-forward svc/{{ include "app.fullName" . }} {{ .Values.app.service.port }}:{{ .Values.app.service.port }} --namespace {{ .Release.Namespace }} 
+
+After that it will be reachable at the address http://localhost:8080
+
+{{- end}}
+
+######
+###
