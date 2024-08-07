@@ -4,6 +4,8 @@ First steps with Helm
 The webcourse this section is based upon uses `kind` as its K8s engine, so let's install that and create a `kind` cluster.
 
 ```console
+$ sudo snap install go --classic
+go 1.22.5 from Canonical✓ installed
 $ go install sigs.k8s.io/kind@v0.23.0
 $ kind create cluster
 Creating cluster "kind" ...
@@ -25,6 +27,12 @@ Kubernetes control plane is running at https://127.0.0.1:46753
 CoreDNS is running at https://127.0.0.1:46753/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 
 To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+```
+
+Next, install Helm:
+```console
+$ sudo snap install helm --classic
+helm 3.15.3 from Snapcrafters✪ installed
 ```
 
 ## Install a public chart

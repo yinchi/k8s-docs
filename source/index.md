@@ -7,8 +7,8 @@ The instructions assume a **Ubuntu** host machine; however, except for the insta
 
 **Contents**
 
-- [Intro to Kubernetes]<getting-started/01-installation.md>
-- [Intro to Kubernetes]<helm/01-setup.md>
+- [Intro to Kubernetes](getting-started/01-installation.md)
+- [Intro to Helm](helm/01-setup.md)
 - Intro to Traefik
 - Backend with FastAPI, SQLModel, and SQLAlchemy-JSON
 - Task scheduling with Argos Workflow
