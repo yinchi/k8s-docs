@@ -1,0 +1,7 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+  extraMounts:
+  - hostPath: /home/yinchi/k8s-docs/helm-kanban-v2/mnt/bitnami/postgresql
+    containerPath: /bitnami/postgresql

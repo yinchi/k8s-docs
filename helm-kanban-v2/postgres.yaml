@@ -5,3 +5,10 @@ auth:
   username: "kanban"
   password: "kanban"
   database: "kanban"
+
+primary:
+  persistence:
+    existingClaim: "pv-claim"
+
+volumePermissions:
+  enabled: true
