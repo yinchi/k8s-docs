@@ -5,7 +5,7 @@ In the previous section, we created `app/templates/deployment.yaml` and `app/tem
 
 
 ```{note}
-The files for this section are located at <https://github.com/yinchi/k8s-docs/tree/main/helm-kanban-v2>.
+The files for this and the next section are located at <https://github.com/yinchi/k8s-docs/tree/main/helm-kanban-v2>.
 ```
 
 ## `_helpers.tpl`
