@@ -118,7 +118,7 @@ app:
 
 The `NOTES.txt` file is shown if present when installing or upgrading a Helm chart and also supports the Go template syntax.
 
-```{code-block} txt
+```{code-block} text
 :caption: NOTES.txt
 
 ### 
