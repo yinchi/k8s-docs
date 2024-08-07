@@ -298,15 +298,12 @@ app:
 
 ## Providing a PostgreSQL backend for the app
 
-Let us use the `bitnami/postgresql` Helm chart.  Since the README file is difficult to read in Markdown form, let us render it as HTML:
+Let us use the `bitnami/postgresql` Helm chart:
 
 ```bash
-sudo apt install pandoc
-helm show readme bitnami/postgresql | pandoc > postgres.README.html
-xdg-open postgres.README.html
+helm repo add bitnami https://charts.bitnami.com/bitnami
 ```
-
-Scroll down to the Section titled `PostgreSQL common parameters`. We see that we need to edit the following parameters in the `auth` section. Let us also rename our deployment to "postgres":
+The documentation for the Helm chart can be found at <https://artifacthub.io/packages/helm/bitnami/postgresql>. Scroll down to the Section titled `PostgreSQL common parameters`. We see that we need to edit the following parameters in the `auth` section. Let us also rename our deployment to "postgres":
 
 ```{code-block} yaml
 :caption: postgres.yaml
