@@ -7,6 +7,11 @@ The webcourse this section is based upon uses `kind` as its K8s engine, so let's
 $ sudo snap install go --classic
 go 1.22.5 from Canonical✓ installed
 $ go install sigs.k8s.io/kind@v0.23.0
+```
+
+Add `$HOME/go/bin` to your `$PATH` environment variable, for example in `$HOME/.bashrc`.
+
+```
 $ kind create cluster
 Creating cluster "kind" ...
  ✓ Ensuring node image (kindest/node:v1.30.0) 🖼
