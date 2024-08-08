@@ -1,0 +1,3 @@
+[submodule "helm-course"]
+	path = helm-kanban-helmchart
+	url = https://github.com/wkrzywiec/helm-course.git
